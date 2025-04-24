@@ -6,7 +6,7 @@
 /*   By: frocha-b <frocha-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/19 17:19:41 by frocha-b          #+#    #+#             */
-/*   Updated: 2025/04/19 17:19:41 by frocha-b         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:50:29 by frocha-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,11 +69,11 @@ char	*make_line(char *stash)
 	size_t	i;
 
 	len = 0;
-	while (stash[len - 1] != '\n')
+	while (stash[len] != '\n')
 	{
 		len++;
 	}
-	line = malloc (sizeof(char) * (len + 1));
+	line = malloc (sizeof(char) * (len + 2));
 	if (!line)
 		return (NULL);
 	i = 0;
@@ -82,13 +82,16 @@ char	*make_line(char *stash)
 		line[i] = stash[i];
 		i++;
 	}
+	line[i] = '\n'
 	line[i] = '\0';
+	free(stash);
 	return (line);
 }
 
-// problemas a resolver
-/*
-entender quando chamar outra vez a funcao, 
-o que deve ser estatico e o q ela vai ler e
- criar ponteiro para isso talvez
- */
+void	shift_buf(static char	*buf)
+{
+	while(*buf != '\n')
+	{
+		buff++;
+	}
+}
