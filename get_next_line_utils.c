@@ -5,93 +5,80 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: frocha-b <frocha-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/19 17:19:41 by frocha-b          #+#    #+#             */
-/*   Updated: 2025/04/24 15:50:29 by frocha-b         ###   ########.fr       */
+/*   Created: 2025/05/07 17:32:22 by frocha-b          #+#    #+#             */
+/*   Updated: 2025/05/07 17:32:22 by frocha-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 
-size_t	ft_strlen(char *s)
+int	ft_strlen(char *str)
 {
-	size_t	count;
-
-	count = 0;
-	while (s[count])
-		count++;
-	return (count);
-}
-
-char	*ft_strjoin(char *s1, char *s2)
-{
-	char	*string;
-	size_t	len;
-	size_t	i;
-	size_t	j;
-
-	len = ft_strlen(s1) + ft_strlen(s2);
-	string = malloc (sizeof (char) * (len + 1));
-	if (!string)
-		return (NULL);
-	i = 0;
-	while (s1[i])
-	{
-		string[i] = s1[i];
-		i++;
-	}
-	j = 0;
-	while (s2[i])
-	{
-		string[i + j] = s2[j];
-		j++;
-	}
-	string[i + j] = '\0';
-	return (string);
-}
-
-char	*ft_strchr(char *s, char c)
-{
-	while (*s)
-	{
-		if (*s ==(unsigned char) c)
-			return (&s);
-		s++;
-	}
-	if (*s == c)
-		return (&s);
-	return (NULL);
-}
-
-char	*make_line(char *stash)
-{
-	size_t	len;
-	char	*line;
-	size_t	i;
+	int len;
 
 	len = 0;
-	while (stash[len] != '\n')
-	{
+	while(str[len])
 		len++;
-	}
-	line = malloc (sizeof(char) * (len + 2));
-	if (!line)
+	return (len)
+}
+char	*ft_strjoin(char *line, char *buff)
+{
+	char	*str;
+	int		length;
+	int		i;
+	int		j;
+
+	length = ft_strlen(line) + ft_strlen(buff);
+	str = malloc(length + 1* sizeof(char));
+	if (!str)
+		free(line);
 		return (NULL);
-	i = 0;
-	while (i < len)
+	while (line[i])
 	{
-		line[i] = stash[i];
+		str[i] = line[i];
 		i++;
 	}
-	line[i] = '\n'
-	line[i] = '\0';
-	free(stash);
-	return (line);
+	while (buff[j])
+	{
+		str[i + j] = buff[j];
+		j++;
+	}
+	str[i + j] = '\0';
+	return (str);
 }
 
-void	shift_buf(static char	*buf)
+int	str_srch(char * buff, char c, int bytes_read)
 {
-	while(*buf != '\n')
+	int	i;
+
+	i = 0;
+	while (i < bytes_read)
 	{
-		buff++;
+		if (buff[i] == c)
+			return (1);
+	} 
+	return (0);
+}
+
+void	shift_buffer(char *buff, int bytes_read)
+{
+	while (buff[i] != '\n' && i < bytes_read)
+		i++;
+	while (buff[i + j])
+	{
+		buff[j] = buff[i + j];
+		j++;
 	}
+	buff[i + j] = '\0';
+}
+
+void	copy_buff(char *buff, int bytes_read)
+{
+	char	*buff_resized;
+	while (buff[i] != '\n' && i < bytes_read)
+	{
+		buff_resized[i] = buff[i];
+		i++;
+	}
+
 }
