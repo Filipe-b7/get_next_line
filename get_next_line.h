@@ -13,7 +13,7 @@
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-#define BUFFER_SIZE = 42
+#define BUFFER_SIZE =42
 
 #include <unistd.h>
 #include <stdlib.h>
@@ -22,5 +22,6 @@ int		ft_strlen(char *str);
 char	*ft_strjoin(char *line, char *buff);
 int		str_srch(char * buff, char c, int bytes_read);
 void	shift_buffer(char *buff, int bytes_read);
+void	copy_buff(char *buff, int bytes_read);
 
 #endif
