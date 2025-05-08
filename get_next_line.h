@@ -6,7 +6,7 @@
 /*   By: frocha-b <frocha-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:32:28 by frocha-b          #+#    #+#             */
-/*   Updated: 2025/05/07 17:32:28 by frocha-b         ###   ########.fr       */
+/*   Updated: 2025/05/08 20:11:56 by frocha-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,10 @@
 
 #include <unistd.h>
 #include <stdlib.h>
+
+int		ft_strlen(char *str);
+char	*ft_strjoin(char *line, char *buff);
+int		str_srch(char * buff, char c, int bytes_read);
+void	shift_buffer(char *buff, int bytes_read);
 
 #endif

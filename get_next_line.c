@@ -6,7 +6,7 @@
 /*   By: frocha-b <frocha-b@student.42porto.com>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/07 17:32:25 by frocha-b          #+#    #+#             */
-/*   Updated: 2025/05/07 17:32:25 by frocha-b         ###   ########.fr       */
+/*   Updated: 2025/05/08 20:14:09 by frocha-b         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,4 +51,14 @@ char	*get_next_line(int fd)
 				return (NULL);
 		}
 	}
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+
+	printf("%s",get_next_line(3));
+	return (0);
+
 }
