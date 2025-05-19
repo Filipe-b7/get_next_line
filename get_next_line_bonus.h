@@ -1,0 +1,30 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line_bonus.h                             :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: frocha-b <frocha-b@student.42porto.com>    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/16 10:37:40 by frocha-b          #+#    #+#             */
+/*   Updated: 2025/05/16 16:06:50 by frocha-b         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef GET_NEXT_LINE_BONUS_H
+# define GET_NEXT_LINE_BONUS_H
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 4
+# endif
+
+# include <unistd.h>
+# include <fcntl.h>
+# include <stdlib.h>
+
+char	*get_next_line(int fd);
+int		ft_line_len(char *line, char *buff);
+char	*ft_join_buff(char *line, char *buff);
+int		ft_strchr(char *buffer, char c);
+void	shift_buff(char *buffer);
+
+#endif
